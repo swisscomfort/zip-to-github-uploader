@@ -1,16 +1,14 @@
-# 🚀 ZIP-to-GitHub-Uploader# 🚀 ZIP → GitHub Repo Uploader
+# 🚀 ZIP → GitHub Repo Uploader
 
+> Ein intelligentes, professionelles Werkzeug zur Automatisierung von ZIP-Projekt-Uploads in GitHub-Repositories.
 
-
-> Ein intelligentes, professionelles Werkzeug zur Automatisierung von ZIP-Projekt-Uploads in GitHub-Repositories.Ein intelligentes Werkzeug, um ZIP-Projekte direkt in GitHub-Repositories umzuwandeln – **automatisiert, elegant, erweiterbar**.
-
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)Dieses Tool ist Teil deines `app-dev-starter`-Projekts und dient als **perfekte Vorlage**, um strukturierte Workflows und Upload-Prozesse zu lernen und zu wiederholen.
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-
----
+[![GitHub Release](https://img.shields.io/github/v/release/swisscomfort/zip-to-github-uploader?style=flat)](https://github.com/swisscomfort/zip-to-github-uploader/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/swisscomfort/zip-to-github-uploader?style=flat)](https://github.com/swisscomfort/zip-to-github-uploader)
+[![GitHub Issues](https://img.shields.io/github/issues/swisscomfort/zip-to-github-uploader?style=flat)](https://github.com/swisscomfort/zip-to-github-uploader/issues)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-v1.28+-FF4B4B?style=flat)](https://streamlit.io)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/swisscomfort/zip-to-github-uploader/tests.yml?style=flat)](https://github.com/swisscomfort/zip-to-github-uploader/actions)
 
 ---
 
@@ -217,8 +215,18 @@ Siehe [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
 
-## 📄 Lizenz
+## �‍💻 Über den Autor
+
+**swisscomfort** – Full-Stack Developer & Open Source Enthusiast
+
+- 🌐 GitHub: [@swisscomfort](https://github.com/swisscomfort)
+- 💼 Portfolio: Spezialisiert auf Python, Web Development & DevOps
+- 🚀 Projekte: Automatisierung, Cloud-native Applications, Developer Tools
+
+---
+
+## �📄 Lizenz
 
 MIT License – Siehe [LICENSE](./LICENSE)
 
-**Made with ❤️ by swisscomfort**
+Made with ❤️ by [swisscomfort](https://github.com/swisscomfort)
