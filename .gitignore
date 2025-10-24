@@ -1,0 +1,25 @@
+# Bytecode & Cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtuelle Umgebungen
+venv/
+env/
+.venv/
+
+# Konfigurations-/Systemdateien
+*.log
+*.tmp
+.DS_Store
+
+# Secrets
+.env
+
+# Editor-/IDE-spezifisch
+.vscode/
+.idea/
+
+# Output-Dateien
+README_auto.md
+README_ki.md

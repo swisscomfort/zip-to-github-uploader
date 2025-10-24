@@ -1,0 +1,28 @@
+#!/bin/bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+export PATH="${HERE}/usr/bin:${PATH}"
+export PYTHONPATH="${HERE}/usr/bin:${PYTHONPATH}"
+
+# Prüfe ob Python verfügbar ist
+if ! command -v python3 &> /dev/null; then
+    zenity --error --text="Python3 ist nicht installiert.\nBitte installiere Python3." 2>/dev/null || \
+    echo "Python3 ist nicht installiert. Bitte installiere Python3."
+    exit 1
+fi
+
+# Installiere benötigte Pakete
+echo "Installiere Abhängigkeiten..."
+pip3 install --user streamlit requests python-dotenv pandas altair > /tmp/pip_install.log 2>&1
+
+# Starte die Anwendung
+cd "${HERE}/usr/bin"
+
+# Öffne Browser automatisch
+sleep 2 && xdg-open "http://localhost:8504" &
+
+# Starte Streamlit
+python3 -m streamlit run streamlit_app_fixed.py \
+    --server.headless=true \
+    --server.port=8504 \
+    --browser.gatherUsageStats=false \
+    --server.address=0.0.0.0

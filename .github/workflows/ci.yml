@@ -1,0 +1,55 @@
+name: CI
+
+on:
+push:
+paths:
+\- 'web/examples/zip-uploader/**'
+pull\_request:
+paths:
+\- 'web/examples/zip-uploader/**'
+
+jobs:
+lint:
+runs-on: ubuntu-latest
+defaults:
+run:
+working-directory: web/examples/zip-uploader
+
+```
+steps:
+  - name: 🔄 Checkout code
+    uses: actions/checkout@v3
+
+  - name: 🐍 Set up Python 3.11
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.11'
+
+  - name: 📦 Cache pip
+    uses: actions/cache@v3
+    with:
+      path: ~/.cache/pip
+      key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+      restore-keys: |
+        ${{ runner.os }}-pip-
+
+  - name: 📦 Install dependencies
+    run: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+
+  - name: ✅ Lint with pylint
+    run: |
+      pip install pylint
+      pylint streamlit_app.py uploader_utils.py shared/*.py
+
+  - name: 🎨 Format check with Black
+    run: |
+      pip install black
+      black --check .
+
+  - name: 🔍 Security scan (bandit)
+    run: |
+      pip install bandit
+      bandit -r .
+```

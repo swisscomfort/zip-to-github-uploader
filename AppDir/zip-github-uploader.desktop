@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ZIP to GitHub Uploader
+Comment=Upload ZIP files to GitHub repositories
+Exec=AppRun
+Icon=zip-github-uploader
+Type=Application
+Categories=Development;Utility;Network;
+Terminal=false
+StartupNotify=true

@@ -1,0 +1,59 @@
+# Automatische Code-Formatierung vor Commits
+# Installation: pip install pre-commit
+# Setup: pre-commit install
+# Manuell: pre-commit run --all-files
+
+repos:
+  # YAML-Formatierung
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-merge-conflict
+
+  # Python Code Formatierung (Black)
+  - repo: https://github.com/psf/black
+    rev: 23.10.0
+    hooks:
+      - id: black
+        language_version: python3.8
+
+  # Import Sortierung
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  # Python Linting (Flake8)
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        args: ["--max-line-length=100"]
+
+  # Sicherheitsprüfung
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ["-c", "pyproject.toml"]
+
+  # Docstring-Formatierung
+  - repo: https://github.com/PyCQA/pydocstyle
+    rev: 6.3.0
+    hooks:
+      - id: pydocstyle
+
+ci:
+  autofix_commit_msg: |
+    chore: pre-commit auto-fixes
+  autofix_prs: true
+  autoupdate_branch: ""
+  autoupdate_commit_msg: "chore: pre-commit autoupdate"
+  autoupdate_schedule: weekly
+  skip: [bandit] # Skip bandit in CI wegen False Positives
+  submodules: false
